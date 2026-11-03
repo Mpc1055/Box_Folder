@@ -19,11 +19,13 @@ Clock Wise = Up
 
 #define SPR 200     //steps per revolution
 #define downBut 23  //Start button (for this test start will be up )
-#define upBut 34
+#define upBut 12
 
+#define step1Delay 600 // Pulse length
 
 int downButState;
 int upButState;
+
 
 
 
@@ -55,9 +57,9 @@ void loop() {
     digitalWrite(step_1_DirPin, ccw);
 
     digitalWrite(step_1_pullp, HIGH);
-    delayMicroseconds(1000);
+    delayMicroseconds(step1Delay);
     digitalWrite(step_1_pullp, LOW);
-    delayMicroseconds(1000);
+    delayMicroseconds(step1Delay);
     digitalWrite(step_1_EnPin, HIGH);
     downButState = digitalRead(downBut);
   }
@@ -70,9 +72,9 @@ void loop() {
     digitalWrite(step_1_DirPin, cw);
 
     digitalWrite(step_1_pullp, HIGH);
-    delayMicroseconds(1000);
+    delayMicroseconds(step1Delay);
     digitalWrite(step_1_pullp, LOW);
-    delayMicroseconds(1000);
+    delayMicroseconds(step1Delay);
 
     digitalWrite(step_1_EnPin, HIGH);
     upButState = digitalRead(upBut);
