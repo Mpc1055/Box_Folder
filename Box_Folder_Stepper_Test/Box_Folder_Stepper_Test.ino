@@ -6,7 +6,7 @@ Clock Wise = Up
 
 
 #define LED 2           // Built In LED
-#define solenoidPin 13  // Solenoid Pin
+
 
 #define cw 1   // clockwise (HIGH)
 #define ccw 0  // counter clockwise (LOW)
@@ -31,7 +31,7 @@ int upButState;
 
 void setup() {
 
-  pinMode(solenoidPin, OUTPUT);
+ 
 
   pinMode(step_1_DirPin, OUTPUT);
   pinMode(step_1_EnPin, OUTPUT);
