@@ -10,8 +10,6 @@
 int extButState;
 int retButState;
 
-
-
 void setup() {
   pinMode(extBut, INPUT_PULLUP);
   pinMode(retBut, INPUT_PULLUP);
@@ -25,17 +23,24 @@ void setup() {
 void loop() {
   extButState = digitalRead(extBut);
 
-  if (extButState == HIGH) {
+  if (extButState == HIGH ) {
     digitalWrite(LED, extButState);
     analogWrite(R_Pwm, 0);
     analogWrite(L_Pwm, 250);
   } else {
     digitalWrite(LED, extButState);
+        analogWrite(R_Pwm, 0);
+    analogWrite(L_Pwm, 0);
   }
   retButState = digitalRead(retBut);
   if (retButState == HIGH) {
     digitalWrite(LED, retButState);
     analogWrite(R_Pwm, 255);
+    analogWrite(L_Pwm, 0);
+  }
+  else{
+        digitalWrite(LED, retButState);
+    analogWrite(R_Pwm, 0);
     analogWrite(L_Pwm, 0);
   }
 }

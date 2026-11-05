@@ -50,6 +50,7 @@ void setup() {
 void loop() {
 
   downButState = digitalRead(downBut);
+  
 
 
   while (downButState == LOW) {
