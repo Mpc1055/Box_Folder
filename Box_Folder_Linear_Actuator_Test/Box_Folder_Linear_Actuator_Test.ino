@@ -23,13 +23,13 @@ void setup() {
 void loop() {
   extButState = digitalRead(extBut);
 
-  if (extButState == HIGH ) {
+  if (extButState == HIGH) {
     digitalWrite(LED, extButState);
     analogWrite(R_Pwm, 0);
-    analogWrite(L_Pwm, 250);
+    analogWrite(L_Pwm, 255);
   } else {
     digitalWrite(LED, extButState);
-        analogWrite(R_Pwm, 0);
+    analogWrite(R_Pwm, 0);
     analogWrite(L_Pwm, 0);
   }
   retButState = digitalRead(retBut);
@@ -37,9 +37,8 @@ void loop() {
     digitalWrite(LED, retButState);
     analogWrite(R_Pwm, 255);
     analogWrite(L_Pwm, 0);
-  }
-  else{
-        digitalWrite(LED, retButState);
+  } else {
+    digitalWrite(LED, retButState);
     analogWrite(R_Pwm, 0);
     analogWrite(L_Pwm, 0);
   }
