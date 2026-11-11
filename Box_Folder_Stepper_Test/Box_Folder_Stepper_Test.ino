@@ -55,7 +55,7 @@ void loop() {
 
   while (downButState == LOW) {
     digitalWrite(step_1_EnPin, LOW);  // Set stepper to Hold Postion
-    digitalWrite(step_1_DirPin, ccw);
+    digitalWrite(step_1_DirPin, ccw); // Set stepper Direction
 
     digitalWrite(step_1_pullp, HIGH);
     delayMicroseconds(step1Delay);
