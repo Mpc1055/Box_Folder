@@ -1,9 +1,9 @@
 
-#define extBut 18
-#define retBut 19  //Red
+#define extBut 15 //Blue
+#define retBut 14 //Red
 
-#define L_Pwm 21  //White
-#define R_Pwm 22  //Black
+#define L_Pwm 2  //White
+#define R_Pwm 3  //Black
 
 #define LED 2  // Built In LED
 
