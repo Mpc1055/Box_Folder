@@ -8,7 +8,7 @@
 #define Ball_Screw_1_Pulse 53   // stepper pulse pin
 #define Ball_Screw_1_EnPin 51   // stepper enable+ pin (HIGH = release, LOW = hold)
 
-#define BS1_Sen_Engage 24
+#define BS1_Sen_Engage 25
 #define BS1_Sen_Home 23
 int BS1_Sen_Home_State;
 int BS1_Sen_Engage_State = 0;
@@ -21,6 +21,9 @@ int BS1_Sen_Engage_State = 0;
 #define ccw 0  // counter clockwise (LOW)
 
 int Start_Button_State = 0;
+
+
+
 
 
 
