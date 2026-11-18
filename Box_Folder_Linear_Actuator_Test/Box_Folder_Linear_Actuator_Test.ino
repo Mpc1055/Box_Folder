@@ -3,9 +3,9 @@
 #define retBut 14 //Red
 
 #define L_Pwm 2  //White
-#define R_Pwm 3  //Black
+#define R_Pwm 2  //Black
 
-#define LED 2  // Built In LED
+#define LED 13  // Built In LED
 
 int extButState;
 int retButState;
@@ -22,24 +22,22 @@ void setup() {
 
 void loop() {
   extButState = digitalRead(extBut);
+  retButState = digitalRead(retBut);
 
-  if (extButState == HIGH) {
-    digitalWrite(LED, extButState);
+  if (extButState == HIGH && retButState == LOW) {
+    // Extend
     analogWrite(R_Pwm, 0);
     analogWrite(L_Pwm, 255);
-  } else {
-    digitalWrite(LED, extButState);
-    analogWrite(R_Pwm, 0);
+    digitalWrite(LED, HIGH);
+  } else if (retButState == HIGH && extButState == LOW) {
+    // Retract
     analogWrite(L_Pwm, 0);
-  }
-  retButState = digitalRead(retBut);
-  if (retButState == HIGH) {
-    digitalWrite(LED, retButState);
     analogWrite(R_Pwm, 255);
-    analogWrite(L_Pwm, 0);
+    digitalWrite(LED, HIGH);
   } else {
-    digitalWrite(LED, retButState);
+    // Neither pressed, or both pressed: stop
     analogWrite(R_Pwm, 0);
     analogWrite(L_Pwm, 0);
+    digitalWrite(LED, LOW);
   }
 }
